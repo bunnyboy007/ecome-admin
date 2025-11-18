@@ -9,7 +9,12 @@ const AddSizes = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState({ type: "", text: "" });
 
-  const API_BASE_URL = "http://localhost:4000/api/product-type";
+  // const API_BASE_URL = "http://localhost:4000/api/product-type";
+
+const API_BASE_URL = "https://mern-ecome.onrender.com/api/product-type";
+
+
+
 
   // Fetch all product types on component mount
   useEffect(() => {
