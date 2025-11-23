@@ -1,25 +1,19 @@
-
-
-
-
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import { Slide, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Login from "./components/Login";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
-import { Route, Routes } from "react-router-dom";
 import Add from "./pages/Add";
+import Sizes from "./pages/AddSizes";
+import Category from "./pages/Category";
+import Dashboard from "./pages/Dashboard";
 import List from "./pages/List";
 import Orders from "./pages/Orders";
-import Category from "./pages/Category"
-import Login from "./components/Login";
-import Sizes from "./pages/AddSizes"
-import Dashboard from "./pages/Dashboard";
 
-
-import { ToastContainer, Slide } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
-export const backendUrl =     "https://mern-ecome.onrender.com" ||  "http://localhost:4000";
-
+//export const backendUrl =     "https://mern-ecome.onrender.com" ||  "http://localhost:4000";
+export const backendUrl = "http://localhost:4000";
 export const currency = (price) => {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -67,10 +61,6 @@ const App = () => {
                 <Route path="/orders" element={<Orders token={token} />} />
                 <Route path="/category" element={<Category token={token} />} />
                 <Route path="/sizes" element={<Sizes />} />
-
-
-
-
               </Routes>
             </div>
           </div>
@@ -81,5 +71,4 @@ const App = () => {
     </div>
   );
 };
-
 export default App;
